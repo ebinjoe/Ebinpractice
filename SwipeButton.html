@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: darkgray;
+        }
+        .swipeBtn{
+            width: 200px;
+            position: relative;
+            height: 60px;
+            border-radius: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 4px;
+            text-decoration: none;
+            transition: 0.5s;
+            background-color: cadetblue;
+            padding-left: 40px;
+            cursor: pointer;
+        }
+        .swipeBtn:hover{
+            padding-left: 0px;
+            padding-right: 40px;
+            color: white;
+        }
+        .swipeBtn span{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            left: 5px;
+            border-radius: 50%;
+            transition: 0.5s ease-in-out;
+        }
+        .swipeBtn:hover span
+        {
+            left: calc(100% - 55px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <a href="" class="swipeBtn">Swipe Next <span></span></a>
+    </div>
+</body>
+</html>
