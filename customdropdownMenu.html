@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown{
+            position: relative;
+        }
+        .dropdown input{
+            width: 300px;
+            height: 20px;
+            border-radius: 10px;
+            padding: 12px 20px;
+            background-color: antiquewhite;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown::before{
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background-color: black;
+            transform: rotate(40deg);
+            right: 20px;
+            top: 18px;
+            transition: 0.5s;
+          
+        }
+        .dropdown::after{
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background-color: black;
+            transform: rotate(-40deg);
+            right: 12px;
+            top: 18px;
+            transition: 0.5s;
+        }
+        .dropdown.active::before{
+         right: 12px;
+          
+        }
+        .dropdown.active::after{
+         right: 20px;
+          
+        }
+        .dropdown .option{
+            position: absolute;
+            top: 50px;
+            background-color: white;
+            width: 100% ;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            display: none;
+            transition: 0.5s;
+        }
+        .dropdown.active .option{
+            display: block;
+        }
+        .option div{
+            padding: 12px 20px;
+        }
+        .option div:hover{
+          background-color: aqua;
+          color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dropdown">
+            <input type="text" class="select" readonly placeholder="Dropdown Menu">
+            <div class="option">
+                <div onmouseover="show('Html')">Html</div>
+                <div onmouseover="show('css')">css</div>
+                <div onmouseover="show('Javascript')">Javascript</div>
+                <div onmouseover="show('React Js')">React Js</div>
+                <div onmouseover="show('Angular')">Angular</div>
+            </div> 
+        </div>
+ 
+    </div>
+</body>
+
+<script>
+
+function show(e){
+    document.querySelector('.select').value = e
+}
+
+
+    let drop = document.querySelector('.dropdown')
+    drop.onclick = function(){
+        drop.classList.toggle('active')
+    }
+</script>
+</html>
