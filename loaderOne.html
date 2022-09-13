@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: darkgray;
+        }
+        .loader{
+            position: relative;
+            width: 70px;
+            height: 70px;
+            background-color: darkgray;
+            animation: loaderoneani 10s linear infinite;
+        }
+        .loader span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(calc(30deg * var(--i)));
+        }
+        .loader span::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+           
+            background: aqua;
+        }
+
+        .loader span:nth-child(3n + 3)::before{
+            background: white;
+            animation: loaderani 10s linear infinite;
+            transform-origin: 35px;
+        }
+
+
+        @keyframes loaderani{
+            0%,25%{
+                transform: rotate(0deg);
+            }
+            75%,90%,100%{
+                transform: rotate(1800deg);
+            }
+        }
+
+        @keyframes loaderoneani{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(380deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="loader">
+            <span style="--i:1"></span>
+            <span style="--i:2"></span></span>
+            <span style="--i:3"></span></span>
+            <span style="--i:4"></span></span>
+            <span style="--i:5"></span></span>
+            <span style="--i:6"></span></span>
+            <span style="--i:7"></span></span>
+            <span style="--i:8"></span></span>
+            <span style="--i:9"></span></span>
+            <span style="--i:10"></span></span>
+            <span style="--i:11"></span></span>
+            <span style="--i:12"></span></span>
+        </div>
+    </div>
+</body>
+</html>
