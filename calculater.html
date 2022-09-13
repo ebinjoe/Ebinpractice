@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      background-color: #edf1f4;
+        }
+        .calculator{
+            position: relative;
+            width: 340px;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+            -15px -15px 20px #fffb;
+        }
+        .calculator .buttons{
+            display: grid;
+            position: relative;
+        }
+        .calculator .buttons #value{
+            grid-column: span 4;
+            user-select: none;
+            overflow: none;
+            width: 100%;
+            text-align: end;
+            height: 100px;
+            line-height: 100px;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.1),
+          inset  -5px -5px 20px #fff;
+          border-radius: 10px;
+          margin-bottom: 12px;
+          padding: 0 20px;
+         
+        }
+        .calculator .buttons span{
+            position: relative;
+            padding: 10px;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.1),
+         -5px -5px 20px #fff;
+         margin: 10px;
+         cursor: pointer;
+         user-select: none;
+         min-width: 40px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 10px;
+
+        }
+
+        .calculator .buttons span:active{
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.1),
+       inset  -5px -5px 20px #fff;
+        }
+        .calculator .buttons span#clear{
+            grid-column: span 2;
+        }
+        .calculator .buttons span#plus{
+            grid-row: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+<div class="calculator">
+    <div class="buttons">
+        <h2 id="value"></h2>
+<span id="clear">clear</span>
+<span>/</span>
+<span>*</span>
+<span>7</span>
+<span>8</span>
+<span>9</span>
+<span>-</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+<span id="plus">+</span>
+<span>1</span>
+<span>2</span>
+<span>3</span>
+<span>0</span>
+<span>00</span>
+<span>.</span>
+<span>=</span>
+    </div>
+</div>
+    </div>
+
+
+    <script>
+        let buttons = document.querySelector('.buttons');
+        let btn = document.querySelectorAll('span');
+        let value = document.getElementById('value')
+console.log(btn)
+
+     for( let i = 0; i<btn.length; i++ ){
+      btn[i].addEventListener("click" , function(){
+        if(this.innerHTML == "="){
+            value.innerHTML = eval(value.innerHTML)
+        }else if(this.innerHTML == "clear"){
+           value.innerHTML = ""
+        }
+        else{
+            value.innerHTML += this.innerHTML
+        }
+        console.log(value.innerHTML)
+      })
+     }
+
+    </script>
+</body>
+</html>
