@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        min-height: 100vh;
+        background-color: antiquewhite;
+        display: flex;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .drawer {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+      }
+      .drawers{
+        cursor: pointer;
+        width: 25%;
+        border: 1px solid black;
+        position: relative;
+      }
+      
+    .drawers.active{
+    width: 90%;
+ 
+      }
+      .drawers.disactive{
+        width: 25%;
+      }
+      #color1{
+        background-color: brown;
+        transition: 1s;
+      }
+      #color2{
+        background-color: green;
+        transition: 1s;
+      }
+      #color3{
+        background-color: yellow;
+        transition: 1s;
+      }
+      #color4{
+        background-color: red;
+        transition: 1s;
+      }
+      .btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: aqua;
+      }
+
+      .btn.active{
+        display: none;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="drawer">
+        <div class="drawers" id="color1"  >
+        <button class="btn">button</button>
+        </div>
+        <div class="drawers" id="color2">
+            <div id="btn1">button</div>
+        </div>
+        <div class="drawers" id="color3">
+            <div id="btn2">button</div> 
+        </div>
+        <div class="drawers"  id="color4">
+            <div id="btn2">button</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+let list = document.querySelectorAll('.drawer .drawers') ;
+
+
+    list.forEach((item) =>{
+    item.addEventListener('click' ,  function activeLink(){
+   
+    list.forEach((item) =>{
+    
+        item.classList.remove('active');
+
+    })
+
+    this.classList.add('active');
+   
+})}); 
+
+    </script>
+
+  </body>
+
+</html>
