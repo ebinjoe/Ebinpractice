@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      background-color: #edf1f4;
+        }
+        #mybtn{
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+        #mybtn.active{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div id="mybtn" >Click Me</div>
+  </div>
+</body>
+<script>
+    
+    //  let hidebtn = document.getElementById('mybtn');
+    //  hidebtn.onclick = function(){
+    //     hidebtn.style.display = "none"
+    //  }
+
+//   function  myclick(){
+//         document.getElementById('mybtn').style.display = "none"
+//     }
+
+// let btn = document.querySelector('#mybtn')
+// btn.addEventListener('click' , function(){
+//     btn.classList.add('active')
+// })
+</script>
+</html>
