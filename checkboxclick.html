@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;        }
+.container{
+    min-height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.box{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    border-bottom: 2px solid black;
+   
+}
+.box label{
+    position: relative;
+    width: 25%;
+    height: 100vh;
+   
+}
+
+label i {
+position: absolute;
+right: 0;
+top: 0;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border-radius: 35px;
+background-color: aqua;
+opacity: 0;
+transition: 0.5s;
+}
+
+#one{
+    background-color: green;
+}
+#two{
+    background-color: yellow;
+}
+#three{
+    background-color: aqua;
+}
+#four{
+    background-color: gray;
+}
+
+.box label input:checked ~ i{
+    opacity: 1;
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <label id="one">
+                <input type="checkbox" class="cheakbox" id="ck1">
+                <i></i>
+            </label>
+            <label id="two">
+                <input type="checkbox" class="cheakbox" id="ck2">
+                <i><button>close</button></i>
+            </label>
+            <label id="three">
+                <input type="checkbox" class="cheakbox" id="ck3">
+                <i><button>close</button></i>
+            </label>
+            <label id="four">
+                <input type="checkbox" class="cheakbox" id="ck3">
+                <i><button>close</button></i>
+            </label>
+        </div>
+        <button>Reset Button</button>
+    </div>
+</body>
+</html>
