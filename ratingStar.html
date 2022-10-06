@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      background-color: #edf1f4;
+  
+        }
+        .card{
+          
+            background-color: aquamarine;
+display: flex;
+        }
+        .star{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(187, 186, 186);
+        }
+        .star.active{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+<div class="card">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+</div>
+    </div>
+
+    <script>
+        //let i
+      
+    //     stars.map((star)=>{
+    //    star.onclick(()=>{
+    //     i=stars.indexof(star);
+    //     console.log(i)
+    //    })
+    //     })
+
+
+        
+// for (var i = 0; i < stars.length; i++) {    
+//     stars[i].addEventListener('click', ((j) => {         
+//     return function() {
+//       alert(j)
+//     }
+//   })(i))
+// }
+        
+
+// for (j=i ; j >= 0 ; j--){
+//     stars[j].addEventListener('click' , function(){this.classList.add("active")})
+
+//     }
+
+
+    
+stars = document.querySelectorAll('.star')  
+
+
+stars.forEach((value , index)=>{
+    value.addEventListener('click' , function(){
+   let indexval = (index + 1)
+   for(j=indexval ; j < stars.length ; j++){
+ stars[j].classList.remove('active')
+}
+   for(i=0 ; i < indexval ; i++){
+    stars[i].classList.add('active')
+   }
+
+
+})
+})
+
+// for(i=indexval ; i > 0; i--){
+//    stars[i].addEventListener('click' , function(){this.classList.add("active")})
+// }
+
+        
+    
+
+
+
+ 
+      
+    </script>
+</body>
+</html>
