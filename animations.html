@@ -1,0 +1,68 @@
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Flexbox demo</title>
+      <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+      min-height: 100vh;
+      background-color: #3d3d3d;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+        }
+        .transform_animation {
+          width: 200px;
+          height: 100px;
+          background-color: rgb(235, 122, 84);
+          visibility: hidden;
+          left: 50%;
+          bottom: 50%;
+          transform: translate(-50% , 50%);
+        }
+
+        .transform_animation.active {
+          visibility: visible;
+          animation: animate 1s ease-in-out 1;
+          position: absolute;
+       
+         
+        }
+
+        @keyframes animate{
+0%{
+    bottom: calc(0%);
+}
+100%{
+    bottom: calc(50%);
+   
+}
+        }
+       
+      </style>
+    </head>
+    <body>
+   
+<div class="container">
+    <button onclick="alert()">alert</button>
+  
+    <div class ="transform_animation">
+  
+ 
+   </div>
+  
+</div>
+
+           <script>
+    function alert(){
+    let popup = document.querySelector('.transform_animation')
+        popup.classList.toggle('active')
+}
+           </script>
+
+    </body>
+  </html>
