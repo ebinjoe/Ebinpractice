@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+   background-color: aliceblue;
+position: relative;   
+}
+.model.active{
+    position: absolute;
+   display: flex;
+   justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.404);
+    width: 100%;
+    transition: 0.3s ease-out;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    background-color: aquamarine;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 200px;
+    top: -200px;
+}
+.card.active{
+    top: 30px;
+    transition: 0.3s ease-out;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn">click me</button>
+<div class="model">
+    <div class="card">
+        r u sure u want to exit
+        <div class="btnn">
+            <button>yes</button>
+            <button>no</button>
+        </div>
+    </div>
+</div>
+    </div>
+    <script>
+var shade = document.querySelector('.model');
+var card = document.querySelector('.card')
+var btn = document.querySelector('.btn')
+
+
+btn.addEventListener('click' , function(){
+    shade.classList.add('active')
+    card.classList.add('active')
+})
+    </script>
+</body>
+</html>
