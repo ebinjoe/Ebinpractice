@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+           *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      background-color: #edf1f4;
+        }
+
+    .box{
+        position: relative;
+        width: 300px;
+        height: 600px;
+        background-color: black;
+        border-radius: 50px;
+    }
+
+    .box::before{
+        position: absolute;
+        content: "";
+        inset: 3px;
+        border-radius: 48px;
+        background-color: black;
+    }
+
+    .inner{
+        position: absolute;
+        inset: 3px;
+        background: url(./mariogameImgFail/download.jpg);
+        border-radius: 48px;
+        border: 10px solid black;
+        opacity: 0;
+        transition: 0.5s;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+    }
+ .btn{
+        position: absolute;
+        width: 3px;
+        height: 26px;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+   top: 120px;
+   left: -2px;
+   background: radial-gradient(#ccc , #666 , #222)
+    }
+    
+    .btn.two{
+        height: 40px;
+        top: 160px;
+    }
+    .btn.three{
+        height: 40px;
+        top: 220px;
+    }
+    .rightSideBtn{
+        position: absolute;
+        width: 3px;
+        height: 60px;
+        border-bottom-right-radius: 4px;
+        border-top-right-radius: 4px;
+        top: 160px;
+        right: -2px;
+        background: radial-gradient(#ccc , #666 , #222)
+    }
+    .box:hover .inner{
+        opacity: 1;
+    }
+    .island_popup{
+        position: absolute;
+        top: 10px;
+        width: 90px;
+        height: 25px;
+        border-radius: 20px;
+        transition: 0.5s ease-in-out;
+        background: black;
+    }
+
+    .island_popup:hover{
+        width: 200px;
+        height: 25px;
+    }
+    .island_popup.active{
+        width: 250px;
+        height: 60px;
+        border-radius: 50px;
+    }
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+<div class="box">
+    <div class="inner"> 
+        <div class="island_popup"></div>
+   
+    </div>
+<div class="btn one"></div>
+<div class="btn two"></div>
+<div class="btn three"></div>
+<div class="rightSideBtn"></div>
+  
+</div>
+    </div>
+    <script>
+        let popup = document.querySelector('.island_popup')
+        popup.onclick = function(){
+            popup.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
