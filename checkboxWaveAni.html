@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #edf1f4;
+      }
+      .input {
+        cursor: pointer;
+
+        width: 20px;
+        height: 20px;
+        background-color: rgba(25, 118, 210, 0.04);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+
+      .input:hover {
+        cursor: pointer;
+
+        width: 60px;
+        height: 60px;
+        background-color: rgba(25, 118, 210, 0.04);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 1;
+      }
+      input {
+        z-index: 1;
+        cursor: pointer;
+      }
+      input.larger {
+        width: 20px;
+        height: 20px;
+      }
+      i {
+        position: absolute;
+        background-color: rgba(25, 118, 210, 0.04);
+        border-radius: 50%;
+        z-index: 0;
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+      }
+
+      .input input:checked ~ i {
+        -webkit-animation: click-wave 0.45s;
+        -moz-animation: click-wave 0.45s;
+        animation: click-wave 0.45s;
+        position: absolute;
+        background-color: rgba(43, 95, 147, 0.36);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .input input:not(:checked) ~ i {
+        -webkit-animation: click-waved 0.45s;
+        -moz-animation: click-waved 0.45s;
+        animation: click-waved 0.45s;
+        position: absolute;
+        background-color: rgba(43, 95, 147, 0.36);
+        border-radius: 50%;
+        z-index: 0;
+      }
+      @keyframes click-wave {
+        0% {
+          height: 20px;
+          width: 20px;
+          opacity: 0.65;
+        }
+        100% {
+          height: 60px;
+          width: 60px;
+          opacity: 0;
+        }
+      }
+
+      @keyframes click-waved {
+        0% {
+          height: 20px;
+          width: 20px;
+          opacity: 0.65;
+        }
+        100% {
+          height: 60px;
+          width: 60px;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input">
+        <input type="checkbox" class="larger" />
+        <i></i>
+      </div>
+    </div>
+  </body>
+</html>
