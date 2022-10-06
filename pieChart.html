@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    
+      .mydiv {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: gray;
+        position: relative;
+      }
+      .mydiv::after {
+        content: "";
+        position: absolute;
+        inset: 3px;
+        border-radius: 50%;
+        background-color: white;
+      }
+      .mydiv::before {
+        content: "";
+        position: absolute;
+        inset: 7px;
+        border-radius: 50%;
+        background-color: var(--color);
+        z-index: 1;
+        transition: 0.5s;
+        animation: animate 2s ease-in-out infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          inset: 7px;
+        }
+        100% {
+          inset: 3px;
+        }
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 90px;
+      }
+
+      .test::after {
+        content: "";
+        position: absolute;
+        width: 3px;
+        height: 100px;
+        background-color: aqua;
+        margin-left: 14px;
+      }
+      .test:nth-child(even)::after {
+        background-color: red;
+        margin-top: -130px;
+      }
+      .test::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 3px;
+        background-color: gray;
+        margin-top: 13px;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="test"><div class="mydiv" style="--color: blue"></div></div>
+      <div class="test"><div class="mydiv" style="--color: pink"></div></div>
+      <div class="test"><div class="mydiv" style="--color: yellow"></div></div>
+      <div class="test"><div class="mydiv" style="--color: indigo"></div></div>
+      <div class="test"><div class="mydiv" style="--color: green"></div></div>
+      <div class="test"><div class="mydiv" style="--color: orange"></div></div>
+      <div class="test"><div class="mydiv" style="--color: purple"></div></div>
+      <div class="test"><div class="mydiv" style="--color: red"></div></div>
+    </div>
+  </body>
+</html>
