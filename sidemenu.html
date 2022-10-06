@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;        }
+.container{
+    min-height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.data{
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    top: 0;
+    left: -300px;
+    background-color: rgba(0, 0, 0, 0.238);
+    transition: 0.5s ease-in-out;
+}
+.data.active{
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    top: 0;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.238);
+    transition: 0.5s ease-in-out;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="mybtn">open side bar</button>
+<div class="data" id="dataa">
+
+</div>
+
+    </div>
+
+    <script>
+
+var val = document.querySelector('.data')
+
+var btn = document.querySelector('.mybtn')
+
+btn.addEventListener('click' , function(){
+    
+    val.classList.toggle('active')
+})
+   
+    </script>
+</body>
+</html>
