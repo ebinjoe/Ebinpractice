@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      th {
+        border: 1px solid black;
+      }
+      td {
+        border: 1px solid black;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        min-height: 100vh;
+        background-color: aliceblue;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .model.active {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.404);
+        width: 100%;
+        transition: 0.3s ease-out;
+      }
+      .card {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        background-color: aquamarine;
+        border: 1px solid black;
+        border-radius: 10px;
+        height: 200px;
+        top: -200px;
+      }
+      .card.active {
+        top: 30px;
+        transition: 0.3s ease-out;
+      }
+      #myid {
+        padding: 0px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="result"></div>
+      <div class="model">
+        <div class="card">
+          r u sure u want to exit
+          <div class="btnn">
+            <button id="mybtn">yes</button>
+            <button id="nobtn">no</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const Tables = [
+        {
+          name: "Ebin",
+          del: "Delete",
+        },
+        {
+          name: "Joee",
+          del: "Delete",
+        },
+        {
+          name: "Prvfefve",
+          del: "Delete",
+        },
+        {
+          name: "uhdiuhu",
+          del: "Delete",
+        },
+        {
+          name: "Shiju",
+          del: "Delete",
+        },
+        {
+          name: "efewfwef",
+          del: "Delete",
+        },
+        {
+          name: "efewfweew",
+          del: "Delete",
+        },
+        {
+          name: "eefewfew",
+          del: "Delete",
+        },
+        {
+          name: "eefewfew",
+          del: "Delete",
+        },
+        {
+          name: "eefewfew",
+          del: "Delete",
+        },
+        
+        {
+          name: "eefewfew",
+          del: "Delete",
+        },
+        {
+          name: "eefewfew",
+          del: "Delete",
+        },
+        
+
+      ];
+
+      function GetTableVal(Tables) {
+        let result = document.getElementById("result");
+        const Tablesss = document.createElement("table");
+        let Tablesss1 = Tablesss.setAttribute("id", "myTable");
+        const Thead = document.createElement("thead");
+        const Tbody = document.createElement("tbody");
+        const tr = document.createElement("tr");
+        const ThforName = document.createElement("th");
+        ThforName.innerText = "Name";
+        const ThforBTn = document.createElement("th");
+        ThforBTn.innerText = "Actions";
+
+        tr.append(ThforName, ThforBTn);
+        Thead.appendChild(tr);
+        Tablesss.appendChild(Thead);
+        Tablesss.appendChild(Tbody);
+
+        for (let table of Tables) {
+          const tr1 = document.createElement("tr");
+          let trTd = tr1.setAttribute("id", "myidTr");
+          const TdforName = document.createElement("td");
+          TdforName.innerText = table.name;
+          tr1.appendChild(TdforName);
+          const TdforAge = document.createElement("Button");
+          TdforAge.setAttribute("id", "myid");
+          TdforAge.innerText = table.del;
+          tr1.appendChild(TdforAge);
+          Tbody.appendChild(tr1);
+        }
+        result.innerText = "";
+        result.appendChild(Tablesss);
+      }
+      GetTableVal(Tables);
+
+      var shade = document.querySelector(".model");
+      var card = document.querySelector(".card");
+      let btn = document.querySelectorAll("#myid");
+
+      btn.forEach((value, index) => {
+        value.addEventListener("click", function () {
+          let trval = document.querySelectorAll("#myidTr");
+          for (j = 0; j < trval.length; j++) {
+            trval[j].addEventListener("click", function openToogle() {
+
+             let ths = this;
+              let mybtn = document.getElementById("mybtn")
+            
+              function delfun(x){
+                return x ? ths.remove() : "not" ;
+              }
+
+              mybtn.addEventListener("click" , function(){
+                 let myval = delfun(true)
+                 shade.classList.remove("active");
+                 card.classList.remove("active");
+              })
+              // let index1 = this.rowIndex;
+              // console.log(index, "old method");
+              // console.log(index1, "new method");
+              //                   // this is node removing code   // problem is cant able to sync it in yes button
+              shade.classList.add("active"); // this is pop up code
+              card.classList.add("active"); // this is pop up code
+      
+            });
+          }
+        });
+      });
+
+     
+
+      let delbtn = document.querySelector("#mybtn");
+      delbtn.addEventListener("click", function () {
+
+
+
+      }("uifuihe"));
+    </script>
+  </body>
+</html>
